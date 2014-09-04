@@ -3,11 +3,12 @@ module CardDecks
     include CardDecks::Decks::Enumerable
     include CardDecks::Decks::Values
 
-    attr_accessor :unused, :inhand
+    attr_accessor :used, :inhand, :hands
     def initialize
       @cards = full_deck.shuffle
-      @unused = []
+      @used = []
       @inhand = []
+      @hands  = []
     end
 
     def with_jokers!(amount = 2)
@@ -19,20 +20,37 @@ module CardDecks
     @@anonymous_player_count = 0
     def deal amount = 5, player_name = "Player #{@@anonymous_player_count += 1}"
       cards = amount.times.map do
-        card = self.first
-        @cards = @cards[1..@cards.size]
+        card = take(1).first
+        unless card
+          reset_unused!
+          card = take(1).first
+        end
         @inhand << card
         card
       end
-      CardDecks::Hand.new *cards, deck: self, name: player_name
+      hand = CardDecks::Hand.new *cards, deck: self, name: player_name
+      @hands << hand
+      hand
     end
 
     def return *hands
       hands.each do |hand_or_cards|
         cards = (hand_or_cards.is_a?(CardDecks::Hand) ? hand_or_cards.cards : Array.wrap(hand_or_cards))
-        @unused += cards
+        @used += cards
         @inhand.delete_if {|c| cards.include?(c) }
+        @hands.each {|h| h.cards.delete_if {|c| cards.include?(c) } }
       end
+    end
+
+    def reset!
+      @hands.each(&:discard!)
+      @cards += @used
+      @used = []
+    end
+
+    def reset_unused!
+      @cards += @used
+      @used = []
     end
 
   end

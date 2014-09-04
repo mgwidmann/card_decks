@@ -107,7 +107,29 @@ describe CardDecks::Deck do
     end
 
     after :each do
-      (deck.size + deck.unused.size).should == 52
+      (deck.size + deck.used.size).should == 52
+    end
+
+  end
+
+  describe '#reset!' do
+    # Deal cards and lose reference to hand
+    before :each do
+      3.times { deck.deal(5) }
+    end
+
+    it 'can reset the deck' do
+      deck.reset!
+      deck.size.should == 52
+    end
+
+    it 'will reset the used automatically when cards are available' do
+      deck.hands.each(&:discard!)
+      deck.deal(50).size.should == 50
+    end
+
+    it 'will only deal the cards it has left' do
+      deck.deal(50).size.should == 37
     end
 
   end

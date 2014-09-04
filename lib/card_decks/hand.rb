@@ -9,7 +9,7 @@ module CardDecks
       @deck = metadata[:deck]
       raise 'Cannot create a hand without the reference to the deck' unless @deck
       @name = metadata[:name]
-      @cards = cards
+      @cards = (cards || []).delete_if(&:nil?)
       @cards.each do |card|
         raise "All cards must have come from the same deck passed in." unless card.deck == @deck
       end
