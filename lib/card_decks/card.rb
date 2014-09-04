@@ -9,6 +9,7 @@ module CardDecks
       @suit = data[:suit]
       @value = data[:value]
       @integer_value = data[:integer_value] || @deck.face_values[@value]
+      @wild = data[:wild]
     end
 
     def self.joker(deck)

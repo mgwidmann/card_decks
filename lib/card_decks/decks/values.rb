@@ -35,7 +35,9 @@ module CardDecks
 
       def full_deck
         suits.keys.product(face_values.keys).map do |card_data|
-          CardDecks::Card.new deck: self, suit: card_data.first, value: card_data.second
+          wild_config = respond_to?(:wild_config) ? self.wild_config : {}
+          wild = (wild_config[card_data.second] || []).include?(card_data.first)
+          CardDecks::Card.new deck: self, suit: card_data.first, value: card_data.second, wild: wild
         end
       end
 
