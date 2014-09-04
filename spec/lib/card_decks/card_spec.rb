@@ -34,4 +34,8 @@ describe CardDecks::Card do
     card.deck.should be_a(CardDecks::Deck)
   end
 
+  it 'should raise an exception when creating a card without a reference to the deck' do
+    expect { CardDecks::Card.new }.to raise_exception
+  end
+
 end

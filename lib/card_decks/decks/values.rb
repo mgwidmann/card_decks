@@ -3,10 +3,6 @@ module CardDecks
     module Values
       extend ActiveSupport::Concern
 
-      def initialize
-        @cards = full_deck
-      end
-
       @@suits = {spades: 4, clubs: 3, hearts: 2, diamonds: 1}
       def suits
         @suits ||= @@suits
