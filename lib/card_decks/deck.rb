@@ -2,7 +2,9 @@ module CardDecks
   class Deck
     include Enumerable
 
-    def new
+    attr_accessor :cards
+
+    def initialize
       @cards = []
     end
 
@@ -15,7 +17,7 @@ module CardDecks
       if block_given?
         @cards.each {|c| yield(c) }
       else
-        Enumerator.new(self, :each)
+        Enumerable.new(self, :each)
       end
     end
 
