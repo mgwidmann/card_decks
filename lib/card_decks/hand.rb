@@ -20,5 +20,9 @@ module CardDecks
       self.cards = []
     end
 
+    def integer_value
+      @integer_value ||= cards.reduce(0) {|sum,card| sum + card.integer_value }
+    end
+
   end
 end

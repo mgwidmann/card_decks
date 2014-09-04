@@ -54,5 +54,11 @@ module CardDecks
       @used = []
     end
 
+    def winner &block
+      if block_given?
+        @hands.sort(&block)
+      end
+    end
+
   end
 end

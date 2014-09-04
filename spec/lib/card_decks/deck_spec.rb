@@ -81,4 +81,25 @@ describe CardDecks::Deck do
 
   end
 
+  describe '#winner' do
+
+    before :each do
+      @joe = deck.deal(5, 'Joe')
+      @frank = deck.deal(5, 'Frank')
+      @bob = deck.deal(5, 'Bob')
+      @name_to_hand_map = {'Joe' => @joe, 'Frank' => @frank, 'Bob' => @bob}
+    end
+
+    it 'should allow a custom winner function' do
+      winner = deck.winner do |player, other_player|
+        other_player.integer_value <=> player.integer_value
+      end
+      values = @name_to_hand_map.values.map {|hand| hand.integer_value }
+      # Find the player name who has the highest integer value of their hand
+      actual_winner = @name_to_hand_map.keys[values.index(values.max)]
+      winner.first.name.should == actual_winner
+    end
+
+  end
+
 end

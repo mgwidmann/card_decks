@@ -39,4 +39,8 @@ describe CardDecks::Hand do
     expect { CardDecks::Hand.new *c, deck: deck }.to raise_exception
   end
 
+  it 'should have an integer value' do
+    hand.integer_value.should be_a(Fixnum)
+  end
+
 end

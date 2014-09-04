@@ -30,10 +30,10 @@ bob   = deck.deal(5, 'Bob')
 
 # For this (simple) game, the player with the highest total card
 # value will be declared the winner
-winner = deck.winner player_one, player_two, player_three do |player, other_player|
-  player.reduce(&:+) > other_player.reduce(&:+)
+winner = deck.winner do |hand_one, hand_two|
+  hand_two.integer_value <=> hand_one.integer_value
 end
-puts "#{winner.name} wins the game!"
+puts "#{winner.first.name} wins the game!"
 ```
 
 #### Configuring game rules
