@@ -1,23 +1,15 @@
 module CardDecks
   class Deck
-    include Enumerable
-
-    attr_accessor :cards
+    include CardDecks::Decks::Enumerable
+    include CardDecks::Decks::Values
 
     def initialize
-      @cards = []
+      @cards = full_deck.shuffle
     end
 
-    def << item
-      @cards << item
-      self
-    end
-
-    def each
-      if block_given?
-        @cards.each {|c| yield(c) }
-      else
-        Enumerable.new(self, :each)
+    def with_jokers!(amout = 2)
+      amount.times do
+        @cards << CardDecks::Card.joker(self)
       end
     end
 
