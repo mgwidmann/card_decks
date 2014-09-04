@@ -15,7 +15,7 @@ describe CardDecks::Decks::Configurable do
   it 'is configurable from an instance object' do
     deck = MyDeck.new
     deck.wild :ace, :diamonds
-    deck.wilds.map {|c| "#{c.value} of #{c.suit}" }.should == ["ace of spades", "ace of diamonds"]
+    deck.wilds.map {|c| "#{c.value} of #{c.suit}" }.sort.should == ["ace of diamonds", "ace of spades"]
   end
 
 end
