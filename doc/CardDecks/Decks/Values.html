@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: CardDecks::Decks::Values
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!CardDecks/Decks/Values.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (V)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../CardDecks.html" title="CardDecks (module)">CardDecks</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Decks.html" title="CardDecks::Decks (module)">Decks</a></span></span>
+     &raquo; 
+    <span class="title">Values</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: CardDecks::Decks::Values
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1">ActiveSupport::Concern</dd>
+      
+    
+  
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="../Deck.html" title="CardDecks::Deck (class)">CardDecks::Deck</a></span>, <span class='object_link'><a href="Configurable.html" title="CardDecks::Decks::Configurable (module)">Configurable</a></span>, <span class='object_link'><a href="../Hand.html" title="CardDecks::Hand (class)">Hand</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/card_decks/decks/values.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Values/ClassMethods.html" title="CardDecks::Decks::Values::ClassMethods (module)">ClassMethods</a></span>
+    
+  
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="DEFAULT_SUITS-constant" class="">DEFAULT_SUITS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span><span class='label'>spades:</span> <span class='int'>4</span><span class='comma'>,</span> <span class='label'>clubs:</span> <span class='int'>3</span><span class='comma'>,</span> <span class='label'>hearts:</span> <span class='int'>2</span><span class='comma'>,</span> <span class='label'>diamonds:</span> <span class='int'>1</span><span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="DEFAULT_FACE_VALUES-constant" class="">DEFAULT_FACE_VALUES =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='label'>ace:</span> <span class='int'>1</span><span class='comma'>,</span>
+  <span class='label'>two:</span> <span class='int'>2</span><span class='comma'>,</span>
+  <span class='label'>three:</span> <span class='int'>3</span><span class='comma'>,</span>
+  <span class='label'>four:</span> <span class='int'>4</span><span class='comma'>,</span>
+  <span class='label'>five:</span> <span class='int'>5</span><span class='comma'>,</span>
+  <span class='label'>six:</span> <span class='int'>6</span><span class='comma'>,</span>
+  <span class='label'>seven:</span> <span class='int'>7</span><span class='comma'>,</span>
+  <span class='label'>eight:</span> <span class='int'>8</span><span class='comma'>,</span>
+  <span class='label'>nine:</span> <span class='int'>9</span><span class='comma'>,</span>
+  <span class='label'>ten:</span> <span class='int'>10</span><span class='comma'>,</span>
+  <span class='label'>jack:</span> <span class='int'>11</span><span class='comma'>,</span>
+  <span class='label'>queen:</span> <span class='int'>12</span><span class='comma'>,</span>
+  <span class='label'>king:</span> <span class='int'>13</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="DEFAULT_FACE_CARDS-constant" class="">DEFAULT_FACE_CARDS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span><span class='symbol'>:jack</span><span class='comma'>,</span> <span class='symbol'>:queen</span><span class='comma'>,</span> <span class='symbol'>:king</span><span class='rbracket'>]</span></pre></dd>
+      
+        <dt id="DEFAULT_JOKER_COUNT-constant" class="">DEFAULT_JOKER_COUNT =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>0</span></pre></dd>
+      
+        <dt id="DEFAULT_JOKER_VALUE-constant" class="">DEFAULT_JOKER_VALUE =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>14</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#joker_value-instance_method" title="#joker_value (instance method)">- (Fixnum) <strong>joker_value</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Configured joker value for this deck instance.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#face_cards-instance_method" title="#face_cards (instance method)">- (Array&lt;Symbol&gt;) <strong>face_cards</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Configured face_cards list for this deck.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#face_values-instance_method" title="#face_values (instance method)">- (Hash) <strong>face_values</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Configured face values for each card in this deck.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#full_deck-instance_method" title="#full_deck (instance method)">- (Object) <strong>full_deck</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Builds a full deck without shuffling.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#suits-instance_method" title="#suits (instance method)">- (Hash) <strong>suits</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Configured suit hash for this deck.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="joker_value=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="joker_value-instance_method">
+  
+    - (<tt>Fixnum</tt>) <strong>joker_value</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Configured joker value for this deck instance.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Joker&#39;s value</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/decks/values.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_joker_value'>joker_value</span>
+  <span class='ivar'>@joker_value</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_joker_value'>joker_value</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="face_cards-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../Array.html" title="Array (class)">Array</a></span>&lt;Symbol&gt;</tt>) <strong>face_cards</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Configured face_cards list for this deck.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Array.html" title="Array (class)">Array</a></span>&lt;Symbol&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>CardDecks::Decks::Values#CardDecks#CardDecks::Decks#CardDecks::Decks::Values#CardDecks::Decks::Values::DEFAULT_FACE_CARDS</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/decks/values.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_face_cards'>face_cards</span>
+  <span class='ivar'>@face_cards</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_face_cards'>face_cards</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="face_values-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>face_values</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Configured face values for each card in this deck.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>CardDecks::Decks::Values#CardDecks#CardDecks::Decks#CardDecks::Decks::Values#CardDecks::Decks::Values::DEFAULT_FACE_VALUES</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/decks/values.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_face_values'>face_values</span>
+  <span class='ivar'>@face_values</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_face_values'>face_values</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="full_deck-instance_method">
+  
+    - (<tt>Object</tt>) <strong>full_deck</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds a full deck without shuffling.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/decks/values.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_full_deck'>full_deck</span>
+  <span class='id identifier rubyid_wild_config'>wild_config</span> <span class='op'>=</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:wild_config</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_wild_config'>wild_config</span> <span class='op'>:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_suits'>suits</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='lparen'>(</span><span class='id identifier rubyid_face_values'>face_values</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_card_data'>card_data</span><span class='op'>|</span>
+    <span class='id identifier rubyid_wild'>wild</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_wild_config'>wild_config</span><span class='lbracket'>[</span><span class='id identifier rubyid_card_data'>card_data</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_card_data'>card_data</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='rparen'>)</span>
+    <span class='const'>CardDecks</span><span class='op'>::</span><span class='const'>Card</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='label'>deck:</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='label'>suit:</span> <span class='id identifier rubyid_card_data'>card_data</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_card_data'>card_data</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span><span class='comma'>,</span> <span class='label'>wild:</span> <span class='id identifier rubyid_wild'>wild</span>
+  <span class='kw'>end</span> <span class='op'>+</span>
+  <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_joker_count'>joker_count</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span>
+    <span class='const'>CardDecks</span><span class='op'>::</span><span class='const'>Card</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='label'>deck:</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='label'>suit:</span> <span class='symbol'>:joker</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='symbol'>:joker</span><span class='comma'>,</span> <span class='label'>wild:</span> <span class='id identifier rubyid_wild_config'>wild_config</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:joker</span><span class='rparen'>)</span>
+  <span class='kw'>end</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="suits-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>suits</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Configured suit hash for this deck.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>CardDecks::Decks::Values#CardDecks#CardDecks::Decks#CardDecks::Decks::Values#CardDecks::Decks::Values::DEFAULT_SUITS</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/decks/values.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_suits'>suits</span>
+  <span class='ivar'>@suits</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_suits'>suits</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Sep  5 01:47:26 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.1).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1072 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: CardDecks::Deck
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!CardDecks/Deck.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../CardDecks.html" title="CardDecks (module)">CardDecks</a></span></span>
+     &raquo; 
+    <span class="title">Deck</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: CardDecks::Deck
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">CardDecks::Deck</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Decks/Configurable.html" title="CardDecks::Decks::Configurable (module)">CardDecks::Decks::Configurable</a></span>, <span class='object_link'><a href="Decks/Enumerable.html" title="CardDecks::Decks::Enumerable (module)">CardDecks::Decks::Enumerable</a></span>, <span class='object_link'><a href="Decks/Values.html" title="CardDecks::Decks::Values (module)">CardDecks::Decks::Values</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/card_decks/deck.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="anonymous_player_count-classvariable" class="">@@anonymous_player_count =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>0</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="Decks/Values.html" title="CardDecks::Decks::Values (module)">CardDecks::Decks::Values</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Values.html#DEFAULT_FACE_CARDS-constant" title="CardDecks::Decks::Values::DEFAULT_FACE_CARDS (constant)">CardDecks::Decks::Values::DEFAULT_FACE_CARDS</a></span>, <span class='object_link'><a href="Decks/Values.html#DEFAULT_FACE_VALUES-constant" title="CardDecks::Decks::Values::DEFAULT_FACE_VALUES (constant)">CardDecks::Decks::Values::DEFAULT_FACE_VALUES</a></span>, <span class='object_link'><a href="Decks/Values.html#DEFAULT_JOKER_COUNT-constant" title="CardDecks::Decks::Values::DEFAULT_JOKER_COUNT (constant)">CardDecks::Decks::Values::DEFAULT_JOKER_COUNT</a></span>, <span class='object_link'><a href="Decks/Values.html#DEFAULT_JOKER_VALUE-constant" title="CardDecks::Decks::Values::DEFAULT_JOKER_VALUE (constant)">CardDecks::Decks::Values::DEFAULT_JOKER_VALUE</a></span>, <span class='object_link'><a href="Decks/Values.html#DEFAULT_SUITS-constant" title="CardDecks::Decks::Values::DEFAULT_SUITS (constant)">CardDecks::Decks::Values::DEFAULT_SUITS</a></span></p>
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hands-instance_method" title="#hands (instance method)">- (Object) <strong>hands</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute hands.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inhand-instance_method" title="#inhand (instance method)">- (Object) <strong>inhand</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute inhand.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#used-instance_method" title="#used (instance method)">- (Object) <strong>used</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute used.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="Decks/Enumerable.html" title="CardDecks::Decks::Enumerable (module)">CardDecks::Decks::Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Enumerable.html#cards-instance_method" title="CardDecks::Decks::Enumerable#cards (method)">#cards</a></span></p>
+
+  
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="Decks/Configurable.html" title="CardDecks::Decks::Configurable (module)">CardDecks::Decks::Configurable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Configurable.html#combinations-instance_method" title="CardDecks::Decks::Configurable#combinations (method)">#combinations</a></span></p>
+
+  
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="Decks/Values.html" title="CardDecks::Decks::Values (module)">CardDecks::Decks::Values</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Values.html#joker_value-instance_method" title="CardDecks::Decks::Values#joker_value (method)">#joker_value</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deal-instance_method" title="#deal (instance method)">- (Object) <strong>deal</strong>(amount = 5, player_name = &quot;Player #{@@anonymous_player_count += 1}&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deals any number of cards out of the deck making sure to track them
+properly.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Deck) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new deck that has been preconfigured via class methods or is just
+a basic 52 card deck already shuffled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset%21-instance_method" title="#reset! (instance method)">- (Object) <strong>reset!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resets the deck back to its new state.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_unused%21-instance_method" title="#reset_unused! (instance method)">- (Object) <strong>reset_unused!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resets just the unused pile back to the card list.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#return-instance_method" title="#return (instance method)">- (Object) <strong>return</strong>(*hands) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns any number of hands to the deck.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#winner-instance_method" title="#winner (instance method)">- (Object) <strong>winner</strong>(&amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determines a winner by sorting the hands by the provided block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#with_jokers%21-instance_method" title="#with_jokers! (instance method)">- (Object) <strong>with_jokers!</strong>(amount = 2) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds into the current list of cards the number of jokers passed in.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Decks/Enumerable.html" title="CardDecks::Decks::Enumerable (module)">CardDecks::Decks::Enumerable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Enumerable.html#%3C%3C-instance_method" title="CardDecks::Decks::Enumerable#&lt;&lt; (method)">#<<</a></span>, <span class='object_link'><a href="Decks/Enumerable.html#%5B%5D-instance_method" title="CardDecks::Decks::Enumerable#[] (method)">#[]</a></span>, <span class='object_link'><a href="Decks/Enumerable.html#each-instance_method" title="CardDecks::Decks::Enumerable#each (method)">#each</a></span>, <span class='object_link'><a href="Decks/Enumerable.html#size-instance_method" title="CardDecks::Decks::Enumerable#size (method)">#size</a></span>, <span class='object_link'><a href="Decks/Enumerable.html#take-instance_method" title="CardDecks::Decks::Enumerable#take (method)">#take</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Decks/Configurable.html" title="CardDecks::Decks::Configurable (module)">CardDecks::Decks::Configurable</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Configurable.html#add_combination-instance_method" title="CardDecks::Decks::Configurable#add_combination (method)">#add_combination</a></span>, <span class='object_link'><a href="Decks/Configurable.html#suits_wild%21-instance_method" title="CardDecks::Decks::Configurable#suits_wild! (method)">#suits_wild!</a></span>, <span class='object_link'><a href="Decks/Configurable.html#suits_wild%3F-instance_method" title="CardDecks::Decks::Configurable#suits_wild? (method)">#suits_wild?</a></span>, <span class='object_link'><a href="Decks/Configurable.html#update_wilds%21-instance_method" title="CardDecks::Decks::Configurable#update_wilds! (method)">#update_wilds!</a></span>, <span class='object_link'><a href="Decks/Configurable.html#wild-instance_method" title="CardDecks::Decks::Configurable#wild (method)">#wild</a></span>, <span class='object_link'><a href="Decks/Configurable.html#wild_config-instance_method" title="CardDecks::Decks::Configurable#wild_config (method)">#wild_config</a></span>, <span class='object_link'><a href="Decks/Configurable.html#wilds-instance_method" title="CardDecks::Decks::Configurable#wilds (method)">#wilds</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Decks/Values.html" title="CardDecks::Decks::Values (module)">CardDecks::Decks::Values</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Decks/Values.html#face_cards-instance_method" title="CardDecks::Decks::Values#face_cards (method)">#face_cards</a></span>, <span class='object_link'><a href="Decks/Values.html#face_values-instance_method" title="CardDecks::Decks::Values#face_values (method)">#face_values</a></span>, <span class='object_link'><a href="Decks/Values.html#full_deck-instance_method" title="CardDecks::Decks::Values#full_deck (method)">#full_deck</a></span>, <span class='object_link'><a href="Decks/Values.html#suits-instance_method" title="CardDecks::Decks::Values#suits (method)">#suits</a></span></p>
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="CardDecks::Deck (class)">Deck</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new deck that has been preconfigured via class methods or is just
+a basic 52 card deck already shuffled. Jokers are disabled by default. To
+add them in, simply call `with_jokers!` to include them in the current
+deck.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='ivar'>@cards</span> <span class='op'>=</span> <span class='id identifier rubyid_full_deck'>full_deck</span><span class='period'>.</span><span class='id identifier rubyid_shuffle'>shuffle</span>
+  <span class='ivar'>@used</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@inhand</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@hands</span>  <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="hands=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="hands-instance_method">
+  
+    - (<tt>Object</tt>) <strong>hands</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute hands</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hands'>hands</span>
+  <span class='ivar'>@hands</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="inhand=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="inhand-instance_method">
+  
+    - (<tt>Object</tt>) <strong>inhand</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute inhand</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inhand'>inhand</span>
+  <span class='ivar'>@inhand</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="used=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="used-instance_method">
+  
+    - (<tt>Object</tt>) <strong>used</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute used</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_used'>used</span>
+  <span class='ivar'>@used</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="deal-instance_method">
+  
+    - (<tt>Object</tt>) <strong>deal</strong>(amount = 5, player_name = &quot;Player #{@@anonymous_player_count += 1}&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deals any number of cards out of the deck making sure to track them
+properly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>amount</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>5</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Amount of cards to deal from the deck, default 5.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>player_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;Player #{@@anonymous_player_count += 1}&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the player to attach the hand to.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>CardDecks::Hand</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deal'>deal</span> <span class='id identifier rubyid_amount'>amount</span> <span class='op'>=</span> <span class='int'>5</span><span class='comma'>,</span> <span class='id identifier rubyid_player_name'>player_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Player </span><span class='embexpr_beg'>#{</span><span class='cvar'>@@anonymous_player_count</span> <span class='op'>+=</span> <span class='int'>1</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_cards'>cards</span> <span class='op'>=</span> <span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_card'>card</span> <span class='op'>=</span> <span class='id identifier rubyid_take'>take</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_card'>card</span>
+      <span class='id identifier rubyid_reset_unused!'>reset_unused!</span>
+      <span class='id identifier rubyid_card'>card</span> <span class='op'>=</span> <span class='id identifier rubyid_take'>take</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@inhand</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_card'>card</span>
+    <span class='id identifier rubyid_card'>card</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_hand'>hand</span> <span class='op'>=</span> <span class='const'>CardDecks</span><span class='op'>::</span><span class='const'>Hand</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='op'>*</span><span class='id identifier rubyid_cards'>cards</span><span class='comma'>,</span> <span class='label'>deck:</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='id identifier rubyid_player_name'>player_name</span>
+  <span class='ivar'>@hands</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_hand'>hand</span>
+  <span class='id identifier rubyid_hand'>hand</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>reset!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resets the deck back to its new state. All hands are discarded, the used
+pile is emptied and added back to the card list.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset!'>reset!</span>
+  <span class='ivar'>@hands</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:discard!</span><span class='rparen'>)</span>
+  <span class='ivar'>@cards</span> <span class='op'>+=</span> <span class='ivar'>@used</span>
+  <span class='ivar'>@used</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_unused!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>reset_unused!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resets just the unused pile back to the card list. Does not discard all
+hands.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_unused!'>reset_unused!</span>
+  <span class='ivar'>@cards</span> <span class='op'>+=</span> <span class='ivar'>@used</span>
+  <span class='ivar'>@used</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="return-instance_method">
+  
+    - (<tt>Object</tt>) <strong>return</strong>(*hands) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns any number of hands to the deck. These cards are added into the
+used pile and will not be reused until after the deck is fully emptied.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hands</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Hand.html" title="CardDecks::Hand (class)">CardDecks::Hand</a></span></tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Card.html" title="CardDecks::Card (class)">CardDecks::Card</a></span>&gt;</tt>, <tt><span class='object_link'><a href="Card.html" title="CardDecks::Card (class)">CardDecks::Card</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>List of cards or hands to return</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='kw'>return</span> <span class='op'>*</span><span class='id identifier rubyid_hands'>hands</span>
+  <span class='id identifier rubyid_hands'>hands</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_hand_or_cards'>hand_or_cards</span><span class='op'>|</span>
+    <span class='id identifier rubyid_cards'>cards</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_hand_or_cards'>hand_or_cards</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>CardDecks</span><span class='op'>::</span><span class='const'>Hand</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_hand_or_cards'>hand_or_cards</span><span class='period'>.</span><span class='id identifier rubyid_cards'>cards</span> <span class='op'>:</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='id identifier rubyid_hand_or_cards'>hand_or_cards</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='ivar'>@used</span> <span class='op'>+=</span> <span class='id identifier rubyid_cards'>cards</span>
+    <span class='ivar'>@inhand</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_cards'>cards</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='ivar'>@hands</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_cards'>cards</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_cards'>cards</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="winner-instance_method">
+  
+    - (<tt>Object</tt>) <strong>winner</strong>(&amp;block) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines a winner by sorting the hands by the provided block</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Block of custom sort function between hands.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_winner'>winner</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+    <span class='ivar'>@hands</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="with_jokers!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>with_jokers!</strong>(amount = 2) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds into the current list of cards the number of jokers passed in.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>amount</span>
+      
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>2</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Amount of jokers to include in the deck, default 2.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/card_decks/deck.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_with_jokers!'>with_jokers!</span><span class='lparen'>(</span><span class='id identifier rubyid_amount'>amount</span> <span class='op'>=</span> <span class='int'>2</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span>
+    <span class='ivar'>@cards</span> <span class='op'>&lt;&lt;</span> <span class='const'>CardDecks</span><span class='op'>::</span><span class='const'>Card</span><span class='period'>.</span><span class='id identifier rubyid_joker'>joker</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Sep  5 01:47:26 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.1.1).
+</div>
+
+  </body>
+</html>

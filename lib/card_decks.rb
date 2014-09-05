@@ -10,5 +10,5 @@ require "card_decks/hand"
 require "card_decks/deck"
 
 module CardDecks
-  # Your code goes here...
+  # CardDecks is an API for building any digital card game.
 end
