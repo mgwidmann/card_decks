@@ -29,5 +29,13 @@ module CardDecks
       @deck.suits_wild?
     end
 
+    def + other_card
+      if other_card.is_a?(CardDecks::Card)
+        self.integer_value + other_card.integer_value
+      else
+        self.integer_value
+      end
+    end
+
   end
 end

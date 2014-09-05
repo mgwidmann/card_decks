@@ -41,6 +41,7 @@ describe CardDecks::Hand do
 
   it 'should have an integer value' do
     hand.integer_value.should be_a(Fixnum)
+    hand.integer_value.should_not == 0
   end
 
 end

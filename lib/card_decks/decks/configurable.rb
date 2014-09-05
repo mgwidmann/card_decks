@@ -49,6 +49,15 @@ module CardDecks
         @suits_wild.nil? ? self.class.suits_wild? : @suits_wild
       end
 
+      def add_combination &block
+        @combinations ||= []
+        @combinations << block
+      end
+
+      def combinations
+        (@combinations ||= []) + self.class.combinations
+      end
+
       module ClassMethods
 
         attr_accessor :wilds
@@ -78,6 +87,15 @@ module CardDecks
 
         def suits_wild?
           @suits_wild
+        end
+
+        def add_combination &block
+          @combinations ||= []
+          @combinations << block
+        end
+
+        def combinations
+          @combinations ||= []
         end
 
       end

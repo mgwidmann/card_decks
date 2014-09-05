@@ -33,6 +33,18 @@ describe CardDecks::Decks::Enumerable do
       deck.each.should be_a(Enumerable)
     end
 
+    it 'can take numbers of cards' do
+      deck.take(1).size.should == 1
+    end
+
+    it 'can take specific cards' do
+      deck.take(ace: :spades).size.should == 1
+    end
+
+    it 'can take multiple specific cards' do
+      deck.take(ace: :spades, king: :spades).size.should == 2
+    end
+
   end
 
 end

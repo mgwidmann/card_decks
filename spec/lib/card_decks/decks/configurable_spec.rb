@@ -106,6 +106,31 @@ describe CardDecks::Decks::Configurable do
       ]
     end
 
+    it 'can add and fetch combinations' do
+      combination = Proc.new do |*cards|
+        if cards.map(&:integer_value).uniq!.size == 1
+          # Return the number of matches times the total value
+          cards.reduce(&:+) * cards.size
+        end
+      end
+      deck.add_combination &combination
+      deck.combinations.should == [combination]
+    end
+
+    it 'adds card combinations to increase their point value' do
+      deck.add_combination do |*cards|
+        # If cards all have the same integer value then multiply their sum
+        # by the number of cards. This is a basic pairs, tripples, ect combo
+        if cards.map(&:integer_value).uniq!.size == 1
+          cards.reduce(&:+) * cards.size
+        end
+      end
+      cards = deck.take(ace: [:spades,:diamonds])
+      hand = CardDecks::Hand.new *cards, deck: deck
+      # Two aces at value 1 each should be doubled to 4
+      hand.integer_value.should == 4
+    end
+
   end
 
 end

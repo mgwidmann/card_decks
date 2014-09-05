@@ -22,7 +22,7 @@ module CardDecks
       }
 
       DEFAULT_JOKER_COUNT = 0
-      DEFAULT_JOKER_VALUE = 13
+      DEFAULT_JOKER_VALUE = 14
 
       def suits
         @suits ||= self.class.suits

@@ -15,7 +15,15 @@ module CardDecks
       end
 
       def take index_or_range
-        @cards.pop(index_or_range)
+        if index_or_range.is_a?(Fixnum) || index_or_range.is_a?(Range)
+          @cards.pop(index_or_range)
+        elsif index_or_range.is_a?(Hash)
+          index_or_range.map do |value, suits|
+            cards = @cards.select {|c| c.value == value && Array.wrap(suits).include?(c.suit) }
+            cards.each {|c| @cards.delete(c) }
+            cards
+          end.flatten
+        end
       end
 
       def size
