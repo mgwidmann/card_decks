@@ -1,4 +1,5 @@
 require "active_support/all"
+require "array_patch"
 
 require "card_decks/version"
 require "card_decks/card"

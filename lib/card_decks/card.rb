@@ -1,7 +1,9 @@
 module CardDecks
   class Card
+    include Comparable
 
     attr_accessor :deck, :suit, :value, :integer_value, :wild
+    alias_method :raw_integer_value, :integer_value
 
     SPADE = "\u2664"
     CLUB = "\u2667"
@@ -34,12 +36,26 @@ module CardDecks
       @deck.suits_wild?
     end
 
-    def + other_card
-      if other_card.is_a?(CardDecks::Card)
-        self.integer_value + other_card.integer_value
-      else
-        self.integer_value
+    def suit_value
+      deck.suits[suit]
+    end
+
+    def face?
+      deck.face_cards.include?(self.value)
+    end
+
+    [:+, :*, :/, :-, :%, :**].each do |op|
+      define_method op do |other_card|
+        if other_card.is_a?(CardDecks::Card)
+          self.integer_value.send(op, other_card.integer_value)
+        else
+          self.integer_value.send(op, other_card)
+        end
       end
+    end
+
+    def <=>(other_card)
+      [integer_value, suit_value] <=> [other_card.integer_value]
     end
 
     def inspect

@@ -21,11 +21,17 @@ module CardDecks
         king: 13
       }
 
+      DEFAULT_FACE_CARDS = [:jack, :queen, :king]
+
       DEFAULT_JOKER_COUNT = 0
       DEFAULT_JOKER_VALUE = 14
 
       def suits
         @suits ||= self.class.suits
+      end
+
+      def face_cards
+        @face_cards ||= self.class.face_cards
       end
 
       def face_values
@@ -65,6 +71,10 @@ module CardDecks
 
         def suits
           @suits ||= DEFAULT_SUITS
+        end
+
+        def face_cards
+          @face_cards ||= DEFAULT_FACE_CARDS
         end
 
         def face_values

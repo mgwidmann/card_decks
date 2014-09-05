@@ -100,14 +100,14 @@ class MyDeck < CardDecks::Deck
   # the value of your hand
   def rule_2 *cards
     if cards.any?(&:wild?)
-      cards.map(&:+) * 2
+      cards.raw_integer_value * 2
     end
   end
 
   # All cards are face cards adds 50 points
   def rule_3 *cards
     if cards.all?(&:face?)
-      cards.reduce(&:integer_value) + 50
+      cards.raw_integer_value + 50
     end
   end
 

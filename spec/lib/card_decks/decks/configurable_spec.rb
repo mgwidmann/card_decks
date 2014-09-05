@@ -10,6 +10,7 @@ describe CardDecks::Decks::Configurable do
     before :each do
       MyClassConfiguredDeck.wilds = {}
       MyClassConfiguredDeck.with_jokers!(0)
+      MyClassConfiguredDeck.combinations = []
       MyClassConfiguredDeck.wild :ace, :spades
     end
 
@@ -54,6 +55,87 @@ describe CardDecks::Decks::Configurable do
       deck.wilds.map {|c| "#{c.value} of #{c.suit}" }.sort.should == [
         "ace of spades", "joker of joker", "joker of joker", "king of clubs", "king of diamonds", "king of hearts", "king of spades"
       ]
+    end
+
+    it 'can add and fetch combinations' do
+      combination = Proc.new do |*cards|
+        if cards.map(&:integer_value).uniq.size == 1
+          # Return the number of matches times the total value
+          cards.reduce(&:+) * cards.size
+        end
+      end
+      MyClassConfiguredDeck.add_combination &combination
+      MyClassConfiguredDeck.combinations.should == [combination]
+    end
+
+    it 'adds card combinations to increase their point value' do
+      MyClassConfiguredDeck.add_combination do |*cards|
+        # If cards all have the same integer value then multiply their sum
+        # by the number of cards. This is a basic pairs, tripples, ect combo
+        if cards.map(&:integer_value).uniq.size == 1
+          cards.reduce(&:+) * cards.size
+        end
+      end
+      deck = MyClassConfiguredDeck.new
+      cards = deck.take(ace: [:spades,:diamonds])
+      hand = CardDecks::Hand.new *cards, deck: deck
+      # Two aces at value 1 each should be doubled to 4
+      hand.integer_value.should == 4
+    end
+
+    context "using &:method in a class definition" do
+
+      class MyClassConfiguredDeckWithAmpersandTest < CardDecks::Deck
+
+        [:rule_1, :rule_2, :rule_3].each {|rule| add_combination(rule) }
+
+        # Highest card is worth twice as much
+        def rule_1 *cards
+          cards.max + cards.raw_integer_value
+        end
+
+        # A wild card in your hand doubles
+        # the value of your hand
+        def rule_2 *cards
+          if cards.any?(&:wild?)
+            cards.raw_integer_value * 2
+          end
+        end
+
+        # All cards are face cards adds 50 points
+        def rule_3 *cards
+          if cards.all?(&:face?)
+            puts "Upping the anti! #{cards.map(&:face?)}"
+            cards.raw_integer_value + 50
+          end
+        end
+
+      end
+
+      let (:ampersand_deck) { MyClassConfiguredDeckWithAmpersandTest.new }
+
+      it 'adds the combinations' do
+        MyClassConfiguredDeckWithAmpersandTest.combinations.size.should == 3
+        ampersand_deck.combinations.size.should == 3
+      end
+
+      it 'uses rule 1' do
+        cards = ampersand_deck.take(ten: :spades, ace: [:spades, :diamonds, :hearts, :clubs])
+        hand = CardDecks::Hand.new *cards, deck: ampersand_deck
+        # Ten = 10 * 2 = 20 + 4 Aces = 24
+        hand.integer_value.should == 24
+      end
+
+      it 'uses rule 2' do
+        cards = ampersand_deck.take(ace: [:spades,:diamonds])
+        hand = CardDecks::Hand.new *cards, deck: ampersand_deck
+      end
+
+      it 'uses rule 3' do
+        cards = ampersand_deck.take(ace: [:spades,:diamonds])
+        hand = CardDecks::Hand.new *cards, deck: ampersand_deck
+      end
+
     end
 
   end
@@ -121,7 +203,7 @@ describe CardDecks::Decks::Configurable do
       deck.add_combination do |*cards|
         # If cards all have the same integer value then multiply their sum
         # by the number of cards. This is a basic pairs, tripples, ect combo
-        if cards.map(&:integer_value).uniq!.size == 1
+        if cards.map(&:integer_value).uniq.size == 1
           cards.reduce(&:+) * cards.size
         end
       end

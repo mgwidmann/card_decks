@@ -54,6 +54,7 @@ module CardDecks
         @combinations << block
       end
 
+      attr_writer :combinations
       def combinations
         (@combinations ||= []) + self.class.combinations
       end
@@ -89,11 +90,16 @@ module CardDecks
           @suits_wild
         end
 
-        def add_combination &block
+        def add_combination method = nil, &block
           @combinations ||= []
-          @combinations << block
+          if block_given?
+            @combinations << block
+          elsif method
+            @combinations << method.to_sym
+          end
         end
 
+        attr_writer :combinations
         def combinations
           @combinations ||= []
         end

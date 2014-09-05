@@ -21,14 +21,17 @@ module CardDecks
     end
 
     def integer_value
-      all_combinations = (1...@cards.size).map {|int| @cards.combination(int).to_a.flatten(1) }
-      combo_points = all_combinations.inject(0) do |sum, combination|
-        sum + (deck.combinations.map {|c| c.call(*combination) }.delete_if(&:nil?).max || 0)
-      end
-      if combo_points > 0
+      all_combinations = (1..@cards.size).map {|int| @cards.combination(int).to_a }.flatten(1)
+      combo_points = all_combinations.map do |combination|
+        (deck.combinations.map do |c|
+          c.is_a?(Symbol) ? deck.send(c, *combination) : c.call(*combination)
+        end.delete_if(&:nil?).max)
+      end.max || 0
+      raw_points = @cards.raw_integer_value
+      if combo_points > raw_points
         combo_points
       else
-        @cards.reduce(0) {|sum,card| sum + card.integer_value }
+        raw_points
       end
     end
 
