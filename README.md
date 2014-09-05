@@ -54,12 +54,12 @@ deck.wild do |card|
   card.integer_value % 2
 end
 # Make wild cards also make suits wild
-deck.wild_applies_to_suit!
+deck.suits_wild!
 
 class MyDeck < CardDecks::Deck
 
   wild :joker
-  wild_applies_to_suit!
+  suits_wild!
 
 end
 ```

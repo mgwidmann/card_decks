@@ -8,8 +8,9 @@ module CardDecks
       raise 'Cannot create a card without the reference to the deck' unless @deck
       @suit = data[:suit]
       @value = data[:value]
-      @integer_value = data[:integer_value] || @deck.face_values[@value]
-      @wild = data[:wild]
+      @integer_value = data[:integer_value] || @deck.face_values[@value] ||
+        (@value == :joker && @deck.joker_value) || raise("Cannot find integer value for #{@value}")
+      @wild = data[:wild] || (@deck.wild_config[:blocks] || []).any? {|block| block.call(self) }
     end
 
     def self.joker(deck)
@@ -22,6 +23,10 @@ module CardDecks
 
     def wild!
       @wild = true
+    end
+
+    def suits_wild?
+      @deck.suits_wild?
     end
 
   end
