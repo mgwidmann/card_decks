@@ -3,6 +3,11 @@ module CardDecks
 
     attr_accessor :deck, :suit, :value, :integer_value, :wild
 
+    SPADE = "\u2664"
+    CLUB = "\u2667"
+    HEART = "\u2661"
+    DIAMOND = "\u2662"
+
     def initialize data = {}
       @deck = data[:deck]
       raise 'Cannot create a card without the reference to the deck' unless @deck
@@ -35,6 +40,11 @@ module CardDecks
       else
         self.integer_value
       end
+    end
+
+    def inspect
+      const = self.class.const_defined?(self.suit.to_s.singularize.upcase) ? self.class.const_get(self.suit.to_s.singularize.upcase) : "?"
+      "#{const} #{self.value.to_s.titleize}"
     end
 
   end

@@ -32,5 +32,9 @@ module CardDecks
       end
     end
 
+    def inspect
+      "#<#{self.class.name} @name=\"#{name}\", @cards=#{cards.inspect}>"
+    end
+
   end
 end

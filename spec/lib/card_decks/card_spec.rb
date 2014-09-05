@@ -38,4 +38,8 @@ describe CardDecks::Card do
     expect { CardDecks::Card.new }.to raise_exception
   end
 
+  it 'should print a pretty inspect' do
+    card.inspect.should == "#{CardDecks::Card::SPADE} Jack"
+  end
+
 end

@@ -44,4 +44,8 @@ describe CardDecks::Hand do
     hand.integer_value.should_not == 0
   end
 
+  it 'has a pretty inspect' do
+    hand.inspect.should == "#<CardDecks::Hand @name=\"#{hand.name}\", @cards=#{hand.cards.inspect}>"
+  end
+
 end
