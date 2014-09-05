@@ -1,8 +1,8 @@
 module CardDecks
   class Deck
-    include CardDecks::Decks::Enumerable
     include CardDecks::Decks::Values
     include CardDecks::Decks::Configurable
+    include CardDecks::Decks::Enumerable
 
     attr_accessor :used, :inhand, :hands
     def initialize

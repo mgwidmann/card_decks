@@ -1,19 +1,24 @@
 module CardDecks
   module Decks
     module Configurable
+      include CardDecks::Decks::Values
       extend ActiveSupport::Concern
 
       def wild value, *suits
         @wilds ||= {}
-        suits = @@suits.keys if suits.empty?
-        @wilds[value] = suits
+        if value == :joker
+          @wilds[:joker] = true
+        else
+          suits = self.class.suits.keys if suits.empty?
+          @wilds[value] = suits
+        end
         update_wilds!
       end
 
       def update_wilds!
         @wilds.each do |value, suits|
           (@cards || []).select do |card|
-            card.value == value && suits.include?(card.suit)
+            card.value == value && (suits == true || suits.include?(card.suit))
           end.each(&:wild!)
         end
       end
@@ -28,16 +33,20 @@ module CardDecks
 
       module ClassMethods
 
-        cattr_accessor :wilds
+        attr_accessor :wilds
 
         def wild value, *suits
-          @@wilds ||= {}
-          suits = @@suits.keys if suits.empty?
-          @@wilds[value] = suits
+          @wilds ||= {}
+          if value == :joker
+            @wilds[:joker] = true
+          else
+            suits = self.suits.keys if suits.empty?
+            @wilds[value] = suits
+          end
         end
 
         def wild_config
-          @@wilds ||= {}
+          @wilds ||= {}
         end
 
       end
