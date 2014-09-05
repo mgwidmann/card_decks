@@ -53,7 +53,7 @@ describe CardDecks::Decks::Configurable do
       end
       deck = MyClassConfiguredDeck.new
       deck.wilds.map {|c| "#{c.value} of #{c.suit}" }.sort.should == [
-        "ace of spades", "joker of joker", "joker of joker", "king of clubs", "king of diamonds", "king of hearts", "king of spades"
+        "ace of spades", "king of clubs", "king of diamonds", "king of hearts", "king of spades"
       ]
     end
 
